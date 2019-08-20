@@ -12,6 +12,8 @@
 		C9471315230C4FF900327191 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9471314230C4FF900327191 /* ChatVC.swift */; };
 		C9471317230C501B00327191 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9471316230C501B00327191 /* ChannelVC.swift */; };
 		C9471319230C5BF500327191 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9471318230C5BF500327191 /* GradientView.swift */; };
+		C947131C230C7E2000327191 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947131B230C7E2000327191 /* Constants.swift */; };
+		C947131E230C82A300327191 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947131D230C82A300327191 /* LoginVC.swift */; };
 		C9CBB401230C4454002BDB28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CBB400230C4454002BDB28 /* AppDelegate.swift */; };
 		C9CBB406230C4454002BDB28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CBB404230C4454002BDB28 /* Main.storyboard */; };
 		C9CBB408230C4456002BDB28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CBB407230C4456002BDB28 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		C9471314230C4FF900327191 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		C9471316230C501B00327191 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		C9471318230C5BF500327191 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C947131B230C7E2000327191 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C947131D230C82A300327191 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C9CBB3FD230C4454002BDB28 /* Slacky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slacky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CBB400230C4454002BDB28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9CBB405230C4454002BDB28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			children = (
 				C9471314230C4FF900327191 /* ChatVC.swift */,
 				C9471316230C501B00327191 /* ChannelVC.swift */,
+				C947131D230C82A300327191 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -97,6 +102,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C947131A230C7DFD00327191 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C947131B230C7E2000327191 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		C9CBB3F4230C4454002BDB28 = {
@@ -120,6 +133,7 @@
 		C9CBB3FF230C4454002BDB28 /* Slacky */ = {
 			isa = PBXGroup;
 			children = (
+				C947131A230C7DFD00327191 /* Utilities */,
 				C947130C230C4C4300327191 /* Supporting Files */,
 				C9471313230C4FCB00327191 /* Model */,
 				C9471312230C4FC000327191 /* View */,
@@ -254,9 +268,11 @@
 			files = (
 				C9471317230C501B00327191 /* ChannelVC.swift in Sources */,
 				C9471315230C4FF900327191 /* ChatVC.swift in Sources */,
+				C947131E230C82A300327191 /* LoginVC.swift in Sources */,
 				C9471319230C5BF500327191 /* GradientView.swift in Sources */,
 				C9CBB401230C4454002BDB28 /* AppDelegate.swift in Sources */,
 				C9471310230C4C9100327191 /* SWRevealViewController.m in Sources */,
+				C947131C230C7E2000327191 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
