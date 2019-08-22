@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8A89D6569687E892B489C660 /* Pods_Slacky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3217D1A9FB152A810EAFA793 /* Pods_Slacky.framework */; };
+		C9104E2B230F089B000700D4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9104E2A230F089B000700D4 /* AuthService.swift */; };
 		C9471310230C4C9100327191 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C947130E230C4C9000327191 /* SWRevealViewController.m */; };
 		C9471315230C4FF900327191 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9471314230C4FF900327191 /* ChatVC.swift */; };
 		C9471317230C501B00327191 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9471316230C501B00327191 /* ChannelVC.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3217D1A9FB152A810EAFA793 /* Pods_Slacky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slacky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		509224F6E780DE67C9137E64 /* Pods-Slacky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slacky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slacky/Pods-Slacky.debug.xcconfig"; sourceTree = "<group>"; };
+		C9104E2A230F089B000700D4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C947130D230C4C8F00327191 /* Slacky-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slacky-Bridging-Header.h"; sourceTree = "<group>"; };
 		C947130E230C4C9000327191 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		C947130F230C4C9100327191 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 				3217D1A9FB152A810EAFA793 /* Pods_Slacky.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C9104E29230F086C000700D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9104E2A230F089B000700D4 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C947130C230C4C4300327191 /* Supporting Files */ = {
@@ -136,6 +146,7 @@
 		C9CBB3FF230C4454002BDB28 /* Slacky */ = {
 			isa = PBXGroup;
 			children = (
+				C9104E29230F086C000700D4 /* Services */,
 				C947131A230C7DFD00327191 /* Utilities */,
 				C947130C230C4C4300327191 /* Supporting Files */,
 				C9471313230C4FCB00327191 /* Model */,
@@ -272,6 +283,7 @@
 				C9471317230C501B00327191 /* ChannelVC.swift in Sources */,
 				C9471315230C4FF900327191 /* ChatVC.swift in Sources */,
 				C9471320230D885800327191 /* CreateAccountVC.swift in Sources */,
+				C9104E2B230F089B000700D4 /* AuthService.swift in Sources */,
 				C947131E230C82A300327191 /* LoginVC.swift in Sources */,
 				C9471319230C5BF500327191 /* GradientView.swift in Sources */,
 				C9CBB401230C4454002BDB28 /* AppDelegate.swift in Sources */,

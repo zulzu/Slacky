@@ -105,7 +105,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCn-PS-2eh">
-                                <rect key="frame" x="281" y="108" width="22" height="22"/>
+                                <rect key="frame" x="287" y="108" width="16" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-Gh-TGP">
@@ -191,7 +191,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3j-1F-Fl2">
-                                <rect key="frame" x="327" y="52" width="28" height="28"/>
+                                <rect key="frame" x="339" y="52" width="16" height="22"/>
                                 <state key="normal" image="closeButton"/>
                                 <connections>
                                     <action selector="closePressed:" destination="bBu-eP-fpO" eventType="touchUpInside" id="aAa-19-4JC"/>
