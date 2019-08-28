@@ -108,7 +108,7 @@
                                 <rect key="frame" x="281" y="108" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-Gh-TGP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-Gh-TGP" customClass="CircleImage" customModule="Slacky" customModuleProvider="target">
                                 <rect key="frame" x="20" y="703" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="oDH-8n-jsy"/>
@@ -421,7 +421,7 @@
                                     <action selector="createAccPressed:" destination="hc4-FG-cHt" eventType="touchUpInside" id="Kj8-OH-sR1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Glc-iq-ahq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Glc-iq-ahq" customClass="CircleImage" customModule="Slacky" customModuleProvider="target">
                                 <rect key="frame" x="137.66666666666666" y="322.66666666666669" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="9WP-WU-PZZ"/>
@@ -443,17 +443,23 @@
                                     <action selector="pickBGColorPressed:" destination="hc4-FG-cHt" eventType="touchUpInside" id="2Mc-ZA-3P6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aOr-8W-AZz">
+                                <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Glc-iq-ahq" firstAttribute="centerX" secondItem="Cyg-ix-ovr" secondAttribute="centerX" id="0id-c1-lNF"/>
                             <constraint firstItem="naH-DW-Xty" firstAttribute="centerX" secondItem="Cyg-ix-ovr" secondAttribute="centerX" id="0tg-df-OOL"/>
                             <constraint firstItem="upW-SH-Quz" firstAttribute="centerX" secondItem="Cyg-ix-ovr" secondAttribute="centerX" id="39a-ur-JHF"/>
+                            <constraint firstItem="aOr-8W-AZz" firstAttribute="centerY" secondItem="Cyg-ix-ovr" secondAttribute="centerY" constant="-100" id="ANd-2O-J2J"/>
                             <constraint firstItem="B5n-u9-Gem" firstAttribute="top" secondItem="UXH-wa-kU5" secondAttribute="top" constant="40" id="Dek-Ix-eS1"/>
                             <constraint firstItem="naH-DW-Xty" firstAttribute="top" secondItem="zOz-Eb-9AA" secondAttribute="bottom" constant="5" id="Ejt-DM-fzd"/>
                             <constraint firstItem="upW-SH-Quz" firstAttribute="top" secondItem="B5n-u9-Gem" secondAttribute="bottom" constant="40" id="Ert-SF-A29"/>
                             <constraint firstItem="Wsq-aS-1TC" firstAttribute="centerX" secondItem="Cyg-ix-ovr" secondAttribute="centerX" id="LRe-0y-1Uq"/>
                             <constraint firstItem="zOz-Eb-9AA" firstAttribute="centerX" secondItem="Cyg-ix-ovr" secondAttribute="centerX" id="MO0-mQ-g8k"/>
+                            <constraint firstItem="aOr-8W-AZz" firstAttribute="centerX" secondItem="Cyg-ix-ovr" secondAttribute="centerX" id="YBn-Uc-yYi"/>
                             <constraint firstItem="Glc-iq-ahq" firstAttribute="top" secondItem="upW-SH-Quz" secondAttribute="bottom" constant="40" id="ZBA-vu-DKY"/>
                             <constraint firstItem="zOz-Eb-9AA" firstAttribute="width" secondItem="Glc-iq-ahq" secondAttribute="width" id="gH7-zR-xCM"/>
                             <constraint firstItem="zOz-Eb-9AA" firstAttribute="top" secondItem="Glc-iq-ahq" secondAttribute="top" id="gNR-kh-Bfh"/>
@@ -467,6 +473,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="Mjl-Y6-h4F" id="w0M-4l-8ZS"/>
                         <outlet property="passTxt" destination="dm2-Uv-apw" id="F70-TH-m0G"/>
+                        <outlet property="spinner" destination="aOr-8W-AZz" id="bPI-Am-bqx"/>
                         <outlet property="userImg" destination="Glc-iq-ahq" id="D0g-vB-bS6"/>
                         <outlet property="usernameTxt" destination="Ufc-oR-IES" id="XTA-oJ-BDD"/>
                         <segue destination="e3z-FL-Wwb" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="35m-e6-SOp"/>
