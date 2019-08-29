@@ -27,7 +27,7 @@ class AuthService {
     
     var authToken: String {
         get {
-            return defaults.value(forKey: TOKEN_KEY) as! String
+            return defaults.value(forKey: TOKEN_KEY) as? String ?? ""
         }
         set {
             defaults.set(newValue, forKey: TOKEN_KEY)
@@ -36,7 +36,7 @@ class AuthService {
     
     var userEmail: String {
         get {
-            return defaults.value(forKey: USER_EMAIL) as! String
+            return defaults.value(forKey: USER_EMAIL) as? String ?? ""
         }
         set {
             defaults.set(newValue, forKey: USER_EMAIL)
@@ -75,19 +75,6 @@ class AuthService {
             
             if response.result.error == nil {
                 
-                //                if let json = response.result.value as? Dictionary<String, Any> {
-                //                    if let email = json["user"] as? String {
-                //                        self.userEmail = email
-                //                    }
-                //                    if let token = json["token"] as? String {
-                //                        self.authToken = token
-                //                    }
-                //                }
-                
-                // Using SwiftyJSON
-                
-//                guard let data = response.data else { return }
-//                let json = try! JSON(data: data)
                 let json: JSON = JSON(response.result.value!)
                 self.userEmail = json["user"].stringValue
                 self.authToken = json["token"].stringValue
