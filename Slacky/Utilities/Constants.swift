@@ -12,6 +12,8 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 // URL Constants
 
+//let BASE_URL = "https://slack-clone-devslopes.herokuapp.com/v1/"
+
 let BASE_URL = "https://slackyslackyslackslack.herokuapp.com/"
 
 let URL_REGISTER = "\(BASE_URL)account/register"
@@ -54,5 +56,10 @@ let USER_EMAIL = "userEmail"
 // Headers
 
 let HEADER = [
+    "Content-Type": "application/json; charset=utf-8"
+]
+
+let BEARER_HEADER = [
+    "Authorization":"Bearer \(AuthService.instance.authToken)",
     "Content-Type": "application/json; charset=utf-8"
 ]
