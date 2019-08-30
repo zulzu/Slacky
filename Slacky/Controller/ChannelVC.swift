@@ -39,7 +39,6 @@ class ChannelVC: UIViewController {
         } else {
             performSegue(withIdentifier: TO_LOGIN, sender: nil)
         }
-        
     }
     
     @objc func userDataDidChange(_ notif: Notification) {

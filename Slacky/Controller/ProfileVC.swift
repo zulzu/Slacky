@@ -24,7 +24,6 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         setupView()
-
     }
 
     @IBAction func closeModalPressed(_ sender: Any) {
