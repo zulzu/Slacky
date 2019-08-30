@@ -114,7 +114,6 @@ class AuthService {
     
     func setUserinfo(data: Data) {
         let json = try! JSON(data:data)
-        
         let id = json["_id"].stringValue //safely and automatically unwrapped, when nil sets an empty String!
         let name = json["name"].stringValue
         let email = json["email"].stringValue
@@ -124,7 +123,19 @@ class AuthService {
         UserDataService.instance.setUserData(id: id, avatarColor: avatarColor, avatarName: avatarName, email: email, name: name)
     }
     
-    
+    func findUserByEmail(completion: @escaping CompletionHandler) {
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                self.setUserinfo(data: data)
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
     
     
     
