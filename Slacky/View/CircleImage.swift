@@ -8,8 +8,7 @@
 
 import UIKit
 
-class CircleImage: UIImageView {
-    
+
     @IBDesignable
     class CircleImage: UIImageView {
         
@@ -29,4 +28,4 @@ class CircleImage: UIImageView {
         
     }
     
-}
+

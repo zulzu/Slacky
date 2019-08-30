@@ -12,9 +12,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 // URL Constants
 
-//let BASE_URL = "https://slack-clone-devslopes.herokuapp.com/v1/"
-
-let BASE_URL = "https://slackyslackyslackslack.herokuapp.com/"
+let BASE_URL = "https://slack-clone-devslopes.herokuapp.com/v1/"
 
 let URL_REGISTER = "\(BASE_URL)account/register"
 
