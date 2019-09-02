@@ -107,6 +107,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCn-PS-2eh">
                                 <rect key="frame" x="281" y="108" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelPressed:" destination="5gI-nm-Jlu" eventType="touchUpInside" id="MLr-2Q-w9a"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9q3-Gh-TGP" customClass="CircleImage" customModule="Slacky" customModuleProvider="target">
                                 <rect key="frame" x="20" y="703" width="75" height="75"/>
