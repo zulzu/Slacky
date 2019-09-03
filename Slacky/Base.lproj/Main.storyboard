@@ -77,6 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="l7M-Aa-CI7"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="o4p-no-eIF" id="79g-F4-sWz"/>
                         <outlet property="menuButton" destination="Jom-V9-gNW" id="Qcn-vQ-dpC"/>
                     </connections>
                 </viewController>
