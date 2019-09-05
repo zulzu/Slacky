@@ -17,6 +17,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var messageTxtBox: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var typingUsersLabel: UILabel!
     
     // Variables
     
@@ -48,10 +49,37 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 if MessageService.instance.messages.count > 0 {
                     let endIndex = IndexPath(row: MessageService.instance.messages.count - 1, section: 0)
-                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: true)
                 }
                 
             }
+        }
+        
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            var names = ""
+            var numberOfTypers = 0
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    } else {
+                        names = "\(names), \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                self.typingUsersLabel.text = "\(names) \(verb) typing a message"
+            } else {
+                self.typingUsersLabel.text = ""
+            }
+            
         }
         
         if AuthService.instance.isLoggedIn {
@@ -60,6 +88,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
     
     @objc func userDataDidChange(_ notif: Notification) {
         if AuthService.instance.isLoggedIn {
@@ -85,12 +114,15 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func messageBoxEditing(_ sender: Any) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         if messageTxtBox.text == "" {
             isTyping = false
             sendButton.isHidden = true
+            SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if isTyping == false {
                 sendButton.isHidden = false
+                SocketService.instance.manager.defaultSocket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
         }
@@ -106,6 +138,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.messageTxtBox.text = ""
                     self.sendButton.isHidden = true
                     self.messageTxtBox.resignFirstResponder()
+                    SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             }
         }
@@ -152,6 +185,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return MessageService.instance.messages.count
     }
     
-    
+
     
 }
